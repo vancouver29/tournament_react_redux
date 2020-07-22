@@ -1,6 +1,7 @@
 // keep track of teams, team names and team member
+import { CREATE_TEAM } from "./TeamsActions";
 
-const teamsReducer = (state, action) => {
+function initialState() {
   return {
     teams: [
       {
@@ -15,6 +16,24 @@ const teamsReducer = (state, action) => {
       },
     ],
   };
+}
+
+const teamsReducer = (state, action) => {
+  console.log("action", action);
+  if (state == undefined) {
+    return initialState();
+  }
+
+  switch (action.type) {
+    case CREATE_TEAM: {
+      const teams = [...state.teams, action.team];
+      return { teams };
+    }
+
+    default: {
+      return state;
+    }
+  }
 };
 
 export default teamsReducer;

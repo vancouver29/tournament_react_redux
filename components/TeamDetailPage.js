@@ -19,7 +19,7 @@ class TeamDetailPage extends Component {
   }
 
   render() {
-    let team = this.getTeam();
+    const team = this.getTeam();
 
     return (
       <div id="team-detail">

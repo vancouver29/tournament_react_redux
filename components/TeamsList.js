@@ -10,7 +10,7 @@ class TeamsList extends Component {
         {this.props.teams.map((team, index) => {
           return (
             <div key={index} className="team">
-              <Link to={"/teams/" + team.id}>{team.name}</Link>
+              <Link to={"/teams/id/" + team.id}>{team.name}</Link>
             </div>
           );
         })}

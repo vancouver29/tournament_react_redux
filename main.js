@@ -7,7 +7,11 @@ import { Provider } from "react-redux";
 
 import "./style.css";
 import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
+
 import TeamDetailPage from "./components/TeamDetailPage";
+import TeamCreatePage from "./components/TeamCreatePage";
+
 import GameDetailPage from "./components/GameDetailPage";
 
 import teamsReducer from "./reducers/TeamsReducer";
@@ -23,12 +27,11 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div id="app-container">
-        <p>
-          <Link to="/">Home</Link>
-        </p>
+        <Navbar />
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/teams/:id" component={TeamDetailPage} />
-        <Route exact path="/games/:id" component={GameDetailPage} />
+        <Route exact path="/teams/create" component={TeamCreatePage} />
+        <Route exact path="/teams/id/:id" component={TeamDetailPage} />
+        <Route exact path="/games/id/:id" component={GameDetailPage} />
       </div>
     </Router>
   </Provider>,
