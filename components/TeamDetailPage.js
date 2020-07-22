@@ -22,8 +22,8 @@ class TeamDetailPage extends Component {
     let team = this.getTeam();
 
     return (
-      <div id="app-container">
-        <h1>this.props.team.name</h1>
+      <div id="team-detail">
+        <h1>{team.name}</h1>
         <ul>
           {team.members.map((member, index) => {
             return <li key={index}>{member}</li>;
@@ -34,8 +34,6 @@ class TeamDetailPage extends Component {
   }
 }
 
-TeamDetailPage = withRouter(TeamDetailPage);
-
 function mapStateToProps(state) {
   const teams = state.topLevelTeamsStoreSpace.teams;
   return {
@@ -44,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return;
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TeamDetailPage);

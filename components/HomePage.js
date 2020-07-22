@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import TeamsList from "./TeamsList";
 import GamesList from "./GamesList";
 
 export default class HomePage extends Component {
   render() {
     return (
-      <div id="app-container">
+      <Fragment>
         <TeamsList />
         <GamesList />
-      </div>
+      </Fragment>
     );
   }
 }

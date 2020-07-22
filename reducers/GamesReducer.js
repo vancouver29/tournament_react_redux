@@ -3,6 +3,7 @@ const gamesReducer = (state, action) => {
   return {
     games: [
       {
+        id: 7345,
         team1: {
           points: 4,
           name: "Purple Parrots",
